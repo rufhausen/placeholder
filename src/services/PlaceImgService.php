@@ -10,11 +10,36 @@ class PlaceImgService implements ServiceInterface
 
     public function __construct()
     {
-        $this->client = new Client();
     }
 
-    public function getImageTag($width, $height, $tagAttributes, $imageOptions)
+    public function getPlaceholderImageTag($width, $height, $tagAttributes, $imageOptions)
     {
+        $tagAttributes = $this->createTagAttributes($tagAttributes);
+        $url           = $this->createPlacHolderUrl($width, $height, $imageOptions);
+
+        return '<img src="' . $url . '" ' . $tagAttributes . '>';
+    }
+
+    public function getImageTag($imagePath, $width, $height, $tagAttributes, $imageOptions)
+    {
+        $tagAttributes = $this->createTagAttributes($tagAttributes);
+
+        if (isset($imagePath) && \File::exists(public_path($imagePath))) {
+            $url = $imagePath;
+        } else {
+            $url = $this->createPlacHolderUrl($width, $height, $imageOptions);
+        }
+
+        return '<img src="' . $url . '" ' . $tagAttributes . '>';
+    }
+
+    public function createPlacHolderUrl($width, $height, $imageOptions)
+    {
+        if ($height == null) {
+            $height = $width;
+        }
+
+        $addPath = '';
         if (!empty($imageOptions)) {
             if (!empty($imageOptions['category'])) {
                 $addPath = '/' . $imageOptions['category'];
@@ -26,8 +51,8 @@ class PlaceImgService implements ServiceInterface
             }
         }
 
-        $path = $this->rootUrl . $width . '/' . $height . $addPath;
+        $url = $this->rootUrl . $width . '/' . $height . $addPath;
 
-        return '<img src="' . $path . '">';
+        return $url;
     }
 }

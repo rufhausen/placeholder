@@ -15,7 +15,7 @@ class PlaceholderServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/config/placeholder.php' => config_path('placeholder.php'),
+            __DIR__ . '/config.php' => config_path('placeholder.php'),
         ]);
     }
 
@@ -26,8 +26,12 @@ class PlaceholderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        App::bind('placeholder', function () {
+        $this->app->singleton('placeholder', function () {
             return new Placeholder;
+        });
+
+        $this->app->singleton('placeimage', function () {
+            return new PlaceImage;
         });
     }
 }

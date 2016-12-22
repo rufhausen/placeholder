@@ -6,7 +6,7 @@ return [
     /**
      * Others:
      *
-     * placeimge.com
+     * placeimg.com
      *
      */
 

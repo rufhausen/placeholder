@@ -4,24 +4,12 @@ namespace Rufhausen\Placeholder;
 
 class Placeholder
 {
+    use PlaceHolderTrait;
+
     public static function make($width, $height = null, $tagAttributes = null, $imageOptions = null)
     {
-        $service = config('placeholder.service');
+        $service = self::getService();
 
-        switch ($service) {
-        case 'unsplash.it':
-            $service = new Services\UnsplashItService;
-            break;
-
-        case 'placeimg.com':
-            $service = new Services\PlaceImgService;
-            break;
-
-        default:
-            throw new \Exception('Placeholder service not defined.');
-            break;
-        }
-
-        return $service->getImageTag($width, $height, $tagAttributes, $imageOptions);
+        return $service->getPlaceholderImageTag($width, $height, $tagAttributes, $imageOptions);
     }
 }
