@@ -30,7 +30,7 @@ Currently, the package consists of two facades: Placeholder and Placeimage. Plac
 ```php
 //Create an image tag that will revert to placeholder if the image does not exist:
 //Usage:
-\Placeimg::make($imagePath, $width, $height = null, $tagAttributes = null, $imageOptions = null);
+\Placeimage::make($imagePath, $width, $height = null, $tagAttributes = null, $imageOptions = null);
 
 //Basic Example:
 \Placeimage::make('/img/test.jpg', 200);
