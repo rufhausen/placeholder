@@ -14,7 +14,7 @@ Currently, the package consists of two facades: Placeholder and Placeimage. Plac
 ###Using the Placeholder tag
 ```php
 //Usage:
-\Placeholder::make(height, width (optional), image tag attributes (opt), placeholder attributes (opt));
+\Placeholder::make($width, $height = null, $tagAttributes = null, $imageOptions = null);
 
 //Basic Example:
 \Placeholder::make(200);
@@ -31,7 +31,7 @@ Currently, the package consists of two facades: Placeholder and Placeimage. Plac
 ```php
 //Create an image tag that will revert to placeholder if the image does not exist:
 //Usage:
-\Placeimg::make(public image path, height, width (optional), image tag attributes (opt), placeholder attributes (opt));
+\Placeimg::make($imagePath, $width, $height = null, $tagAttributes = null, $imageOptions = null);
 
 //Basic Example:
 \Placeimage::make('/img/test.jpg', 200);
