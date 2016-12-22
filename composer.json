@@ -15,7 +15,7 @@
 },
 "autoload": {
     "psr-4": {
-        "Placeholder\\": "src/Placeholder/"
+        "Rufhausen\Placeholder\\": "src/Placeholder/"
     }
 },
     "minimum-stability": "dev"
