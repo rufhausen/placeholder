@@ -1,0 +1,22 @@
+{
+    "name": "rufhausen/placeholder",
+    "type": "library",
+    "description": "Laravel Package for using a placeholder image service to add images to your application.",
+    "keywords": ["placeholder", "images", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gary Taylor",
+            "email": "gtaylor@electricwerks.com"
+        }
+    ],
+    "require": {
+    "php": ">=5.6.4"
+},
+"autoload": {
+    "psr-4": {
+        "Placeholder\\": "src/Placeholder/"
+    }
+},
+    "minimum-stability": "dev"
+}
