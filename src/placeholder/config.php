@@ -4,9 +4,10 @@ return [
     'service' => 'unsplash.it',
 
     /**
-     * Others:
+     * Services:
      *
      * placeimg.com
+     * unsplash.it'
      *
      */
 
