@@ -1,16 +1,17 @@
 # Placeholder
 Laravel 5.3 Package for using a placeholder image service to add images to your application.
 
-##Services supported
+####Services supported
 
 Currently supports [unsplash.it](https://unsplash.it/) and [placeimg.com](https://placeimg.com/).
 
-##Getting Started
+####Getting Started
+
 Currently, the package consists of two facades: Placeholder and Placeimage. Placeholder is strictly for outputing placeholder image tags, while Placeimage will attempt to use an existing image public path, but revert to a placeholder image if the images does not exist.
 
-##Code Examples
+####Code Examples
 
-###Using the Placeholder tag
+####Using the Placeholder tag
 
 ```php
 //Usage:
