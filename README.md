@@ -14,13 +14,16 @@ Currently, the package consists of two facades: Placeholder and Placeimage. Plac
 
 ```php
 //Usage:
+
 \Placeholder::make($width, $height = null, $tagAttributes = null, $imageOptions = null);
 
 //Basic Example:
+
 \Placeholder::make(200);
 //outputs: <img src="https://unsplash.it/200/200?random"> using unsplash.it
 
 //Full Example:
+
 \Placeholder::make(200, 200, ['class' => 'img-responsive', 'id' => 'placeholder'], ['color' => 'grayscale']);
 //outputs:
 <img src="https://unsplash.it/g/200/200?random" class="img-responsive" id="placeholder"> using unsplash.it
@@ -30,10 +33,13 @@ Currently, the package consists of two facades: Placeholder and Placeimage. Plac
 
 ```php
 //Create an image tag that will revert to placeholder if the image does not exist:
+
 //Usage:
+
 \Placeimage::make($imagePath, $width, $height = null, $tagAttributes = null, $imageOptions = null);
 
 //Basic Example:
+
 \Placeimage::make('/img/test.jpg', 200);
 //outputs: <img src="/img/test.jpg"> using unsplash.it
 \Placeimage::make('/img/foo.jpg', 200, null, ['width' => '200', 'class' => 'img-responsive'], ['color' => 'grayscale']); //image does not exist
