@@ -11,6 +11,7 @@ Currently, the package consists of two facades: Placeholder and Placeimage. Plac
 ##Code Examples
 
 ###Using the Placeholder tag
+
 ```php
 //Usage:
 \Placeholder::make($width, $height = null, $tagAttributes = null, $imageOptions = null);
@@ -47,20 +48,21 @@ Add the package to composer.json
 php composer.phar require intervention/image
 ```
 
-Add the package provider to providers array in ```config/app.php```
+Add the package provider to providers array in ```config/app.php```:
 
 ```php
 Rufhausen\Placeholder\PlaceholderServiceProvider::class,
 ```
 
-Add the facades to the facades array in ```config/app.php```
+Add the facades to the facades array in ```config/app.php```:
 
 ```php
 'Placeholder'  => Rufhausen\Placeholder\Placeholder::class,
 'Placeimage'   => Rufhausen\Placeholder\PlaceImage::class,
 ```
 
-Publish the config
+Publish the config:
+
 ```
 php artisan vendor:publish --provider="Rufhausen\Placeholder\PlaceholderServiceProvider"
 ```
